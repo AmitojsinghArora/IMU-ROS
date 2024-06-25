@@ -1,18 +1,16 @@
-
 #include <Arduino.h>
 #include <FreeSixIMU.h>
-#include <FIMU_ADXL345.h>
-#include <FIMU_ITG3200.h>
+//#include <FIMU_ADXL345.h>
+//#include <FIMU_ITG3200.h>
 #include <Wire.h>
 
 // Set the FreeSixIMU object
 FreeSixIMU sixDOF = FreeSixIMU();
 
-
 void setup() {
-  Serial.begin(9600);
   Wire.begin();
-
+  Serial.begin(9600);
+  
   delay(5);
   sixDOF.init(); // Begin the IMU
   delay(5);
@@ -23,7 +21,6 @@ void loop() {
 
   sixDOF.getValues(values);
   
-
   // Print accelerometer values
   Serial.print("Accel X: ");
   Serial.print(values[0]);
@@ -33,7 +30,4 @@ void loop() {
   Serial.println(values[2]);
 
   delay(600);
-
-  
-
 }

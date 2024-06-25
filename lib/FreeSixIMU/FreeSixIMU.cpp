@@ -28,7 +28,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#include "DebugUtils.h"
 
 
-
 FreeSixIMU::FreeSixIMU() {
 	acc = ADXL345();
 	gyro = ITG3200();
